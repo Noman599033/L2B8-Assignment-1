@@ -5,8 +5,14 @@ const multiplyValue = (value: number, multiplier? : number): number => {
     return value * 2;
 }
 
-
-// --- Problem 1 Sample Check ---
-console.log(multiplyValue(10));    // Output: 20
-console.log(multiplyValue(10, 5)); // Output: 50
-console.log(multiplyValue(7, 0));  // Output: 0
+const processInput = (value: string | number | boolean): string | number => {
+    if (typeof value === "string") {
+        return value.trim().toLowerCase();
+    }
+    else if (typeof value === "number") {
+        return value * 10;
+    }
+    else{
+        return value ? "Active" : "Inactive";
+    }
+}
